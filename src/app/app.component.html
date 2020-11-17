@@ -1,0 +1,37 @@
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyB2XENUEVZIdanjtKklmoWUCVbNPawoQF0",
+        authDomain: "krugertroue-f1492.firebaseapp.com",
+        databaseURL: "https://krugertroue-f1492.firebaseio.com",
+        projectId: "krugertroue-f1492",
+        storageBucket: "krugertroue-f1492.appspot.com",
+        messagingSenderId: "986932919788",
+        appId: "1:986932919788:web:6466dcb31e7119be91d4c9"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    function writeData(){
+        firebase.database().ref("User").set({
+            name: document.getElementById("nameField").value,
+            attend: document.getElementById("attendField").value
+        });
+    }
+
+
+    </script>
+
+    <h1>Admin Database</h1>
+    <input type="text" placeholder="name" id="nameField">
+    <input type="text" placeholder="attend" id="attendField">
+    <button onclick= "writeData()">Submit</button>
+
+</body>
